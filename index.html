@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImgShare - Dịch vụ Upload Ảnh Chuyên Nghiệp</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-1.10.1.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Clow.fun</span>
+          </div>
+
+          <div class="nav-links" id="nav-links">
+            <a href="#" class="active">Trang chủ</a>
+            <a href="#">Dịch vụ</a>
+            <a href="#">Hỗ trợ</a>
+            <a href="#">Liên hệ</a>
+          </div>
+
+          <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+
+          <div class="theme-toggle">
+            <button id="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Upload Ảnh Nhanh Chóng & Dễ Dàng</h1>
+          <p>
+            Dịch vụ lưu trữ và chia sẻ ảnh miễn phí, không giới hạn với chất
+            lượng cao
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-content">
+      <div class="container">
+        <div class="upload-section">
+          <div class="section-header">
+            <h2>Tải ảnh của bạn lên</h2>
+            <p>Hỗ trợ các định dạng JPG, PNG, GIF với kích thước tối đa 10MB</p>
+          </div>
+          <div class="upload-card">
+            <div class="modern-upload">
+              <div class="modern-upload-control">
+                <div class="upload-buttons">
+                  <button class="upload-btn" id="chooseFileBtn">
+                    <i class="fas fa-file-image"></i>
+                    <span>Chọn ảnh</span>
+                  </button>
+                  <input
+                    type="file"
+                    id="fileInput"
+                    accept="image/*"
+                    style="display: none"
+                  />
+
+                  <button class="upload-btn" id="addUrlBtn">
+                    <i class="fas fa-link"></i>
+                    <span>Thêm URL</span>
+                  </button>
+
+                  <button class="upload-btn" id="resetBtn">
+                    <i class="fas fa-redo-alt"></i>
+                    <span>Làm mới</span>
+                  </button>
+
+                  <button class="upload-btn" id="uploadBtn">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Tải lên</span>
+                  </button>
+                </div>
+
+                <div class="upload-counter">0 / 1</div>
+              </div>
+
+              <div class="upload-content">
+                <!-- Khu vực nhập URL -->
+                <div
+                  class="url-input-area"
+                  id="urlInputArea"
+                  style="display: none"
+                >
+                  <div class="url-input-label">Nhập URL ảnh vào đây:</div>
+                  <input
+                    type="text"
+                    class="url-input-field"
+                    id="urlInput"
+                    placeholder="https://example.com/image.jpg"
+                  />
+                  <button class="delete-btn" id="clearUrlBtn">
+                    <i class="fas fa-trash"></i> Xóa
+                  </button>
+                </div>
+
+                <!-- Khu vực xem trước -->
+                <div id="previewArea" style="display: none; margin-top: 20px">
+                  <div class="url-input-label">Xem trước:</div>
+                  <div
+                    id="imagePreview"
+                    style="margin: 15px 0; text-align: center"
+                  ></div>
+                </div>
+
+                <!-- Khu vực hiển thị kết quả -->
+                <div id="resultArea" style="display: none; margin-top: 20px">
+                  <div class="url-input-label">Link ảnh:</div>
+                  <div style="display: flex; margin-top: 10px">
+                    <input
+                      type="text"
+                      id="resultLink"
+                      class="url-input-field"
+                      readonly
+                    />
+                    <button class="copy-btn" id="copyLinkBtn">
+                      <i class="fas fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-section">
+          <div class="section-header">
+            <h2>Tại sao chọn Clow.fun?</h2>
+            <p>Những tính năng nổi bật của dịch vụ chúng tôi</p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3>Tốc độ nhanh</h3>
+              <p>Upload và chia sẻ ảnh chỉ trong vài giây</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+              <h3>Bảo mật cao</h3>
+              <p>Dữ liệu của bạn luôn được bảo vệ an toàn</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <h3>Chia sẻ dễ dàng</h3>
+              <p>Nhận link trực tiếp để chia sẻ với bạn bè</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-infinity"></i>
+              </div>
+              <h3>Không giới hạn</h3>
+              <p>Upload không giới hạn số lượng ảnh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Clow.fun</span>
+          </div>
+
+          <div class="footer-links">
+            <a href="#">Chính sách</a>
+            <a href="#">Điều khoản</a>
+            <a href="#">Liên hệ</a>
+            <a href="#">Hỗ trợ</a>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 ImgShare. Bảo lưu mọi quyền.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
